@@ -1,0 +1,19 @@
+* En el github debe haber un video o link a vídeo donde nos muestran su web funcionando en no más de diez minutos. 
+
+* Dentro del Github deberá existir una carpeta con por lo menos 3 casos de pruebas debidamente documentados
+
+
+* Contar con algún acceso visible a la vista de "Acerca de mí"
+
+* Cada blog, es decir cada model Blog debe tener como mínimo, un título, subtítulo, cuerpo, autor, fecha y una imagen (mínimo y obligatorio, puede tener más).
+
+* Tener una app de registro donde se puedan registrar usuarios en el route accounts/signup, un usuario está compuesto por: email - contraseña - nombre de usuario.
+
+* Tener una app de login en el route accounts/login/ la cual permite loguearse con los datos de administrador o de usuario normal.
+
+* Tener una app de perfiles en el route accounts/profile/ la cual muestra la info de nuestro usuario y permite poder modificar y/o borrar: imagen - nombre - descripción -  un link a una página web - email y contraseña.
+
+* Contar con un admin en route admin/ donde se puedan manejar las apps y los datos en las apps.
+
+* Tener una app de mensajería en el route messages/ para que los perfiles se puedan contactar entre sí.
+
