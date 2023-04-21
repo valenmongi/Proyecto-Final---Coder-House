@@ -1,0 +1,92 @@
+{% extends "APP/base.html" %}
+
+{% load static %}
+
+
+{% block layout %}
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+
+        <!-- Navigation-->
+   
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="{% url 'index' %}">Home</a>
+        
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            
+                    <span class="navbar-toggler-icon"></span>
+            
+                </button>
+            {% if user.is_authenticated %}
+        
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                
+                <ul class="navbar-nav">
+
+                    <li class="nav-item dropdown">
+
+                
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Users
+                        </a>
+                    
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'users' %}">View</a></li>
+                        </ul>
+                    
+                    </li>
+
+                    <li class="nav-item dropdown">
+                
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Publications
+                        </a>
+                    
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'publications' %}">Add New</a></li>
+                            <li><a class="dropdown-item" href="{% url 'publications_search' %}">Search Publications</a></li>
+                        </ul>
+                    
+                    </li>
+                    <li class="nav-item dropdown">
+                
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Purchases
+                        </a>
+                    
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{% url 'purchases' %}">View</a></li>
+                        </ul>
+                    
+                    </li>
+
+                </ul>
+            </div>
+            <p>Bienvenido: {{ user.username }}</p>
+            {% else %}
+                <a class="btn btn-primary" href="{% url 'login' %}">LOGIN</a>
+                <a class="btn btn-danger" href="{% url 'register' %}">REGISTER</a>
+            {% endif %} 
+        </div>
+        </nav>
+
+        {% block content%}
+        {% endblock%}
+    </div>
+</div>
+
+
+<footer class="bg-dark text-center text-white py-3">
+    <!-- Grid container -->
+
+    <!-- Grid container -->
+    
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        
+    </div>
+    <!-- Copyright -->
+</footer>
+{% endblock%}
