@@ -19,6 +19,11 @@ def index(request):
 
     return render(request,'APP/index.html',params)
 
+def about_me(request):
+    params = {}
+
+    return render(request,'APP/aboutMe.html',params)
+
 #login logout register
 
 def login_request(request):

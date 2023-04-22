@@ -1,0 +1,61 @@
+{% extends "APP/layout_access.html" %}
+
+
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="container d-flex align-items-center flex-column mt-5 ">  
+    
+        
+        <div class="row mb-1 align-items-center">  
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-15 text-center">
+                <h1>Hello!</h1>
+                <h4> Welcome to my first web page Project</h1>
+            </div>
+        </div>
+
+        <main>
+
+            <div class="achievements">
+            <div class="about-me">
+                <div class="about-me-text">
+                  <h2>About Me</h2>
+                  <div class="intro">
+                    <h5>My name is Valentín Nicolás Mongi</h5>
+                    <p>I am from Córdoba, Argentina! I am an Economist and data enthusiast!</p>
+                    <button type="button" class="btn btn-outline-success" >Linkedin
+                      <form action="https://www.linkedin.com/in/valentín-mongi/">
+                          <input type="submit" value="Visit my Linkedin´s Profile" />
+                      </form>
+                    </button>
+                  </div>
+                </div>
+                <img src="https://lh3.googleusercontent.com/S0W3GmEyeUgYVD_nvkUL-3hIzYg-AsD7vJXR9BeGebHyYcjNPUqoN9G6UnY9yEgMs1xMoVd-_WxJPhutBYdcug71sxQIWHMKRhV85t7mj3yKP_w28Svp87A7xNC1LhSiwVKrrDRhwAGIrRxm51P1DOHdxvdtSxEputKmBpepyhYd3UPsIJ6GJ-qp7dnEyj3NtWWZ5HaqiVGbDBci4-5KOVRLCPnK8NmLkp4za-2vM1XTLNix0mHaSEYjtlF13GOA_xiwCQDVxHQ4KTI2_sJNnWRWORp-NzkWHPltmUdr0VkY2bIKIew2SQCG0dSjEKffCX1cFwJ44KVYdZ96KvGzO3czQWkRRXasnBWPm3jYF1jeJX8ldLGAysHn08iWgkVN2X2nczFe9E8SN_Tv8fNFiaklQ9nMmXQPszud3aigY6LRZqEEKaZNuEo_M1WAAweYplx9ZtZSDIKjagfDQB__D57QIwxhfBjP2UrvcPN6qthHoQofLnttD3IBwLDw8qChU6K3aYOfxUfHfNYF3BjJa5rG5r0OaEhzPDSY8pq4fECv1VPAwHB1rIs7E_AmOnBmLq9XV_CmB4bWvDkLDFDM5cIuQfX41iRBeX47b06IXGNH2eMd_o09Ke63KkR5RpblPwtKg5j7dWE0HT5KJJjfqHwUcbEBpkIcJ9TNG1TaPgal5EfWmrkc8u34oTVocVPzFk-EOtbfbgfPMAlkj8ek-YnkKqUVfku3qEvot8kNjmGNxfcVkM1glWLfz7ZQbvNoG4QLhxtDi1R_cHBLgmQh6OtLSGkSkR_Izw-V1rX1dwLu-pQ51pnjIlOuod0I1apRWInSFCXHygl1pztzKV6M8DppPXnniUCG61LWKnBq2gwqLWOlI-Pk55AOTeaBGXZF93WdFB69ZXjwgwnu7-_7gYJ8YiWK6-m8RUgH5pbfF_hdNgNjLg=w300-h300-s-no?authuser=0" alt="me">
+              </div>
+            
+              <div class="work">
+                <h2><i class="fas fa-user-graduate"></i></h2>
+                <h3><p class="work-heading">Education</p></h3>
+                <p class="work-text">I am an economist and in the pass few years, i am developing as Data Scientist. I have done several courses in python, machine learning and now i want to learn hoy to program a web page.</p>
+              </div>
+              <div class="work">
+                <h2><i class="fas fa-tools"></i></h2>
+                <h3><p class="work-heading">Skills</p></h3>
+                <p class="work-text">I am good at programming, analyzing data and reporting. I also know English, Portuguese and Italian.</p>
+              </div>
+              <div class="work">
+            <h2><i class="fas fa-skiing"></i></h2>
+            <h3><p class="work-heading">Hobbies</p></h3>
+                <p class="work-text">I like to read, keep updated with new tools. Also i like to go biking in the mountains.</p>
+              </div>
+            </div>
+            
+          </main>
+
+</div>
+{% endblock %}
+
