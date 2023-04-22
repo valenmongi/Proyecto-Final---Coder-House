@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
 from .models import *
 from .forms import *
 from django.http import HttpResponse
@@ -84,6 +84,127 @@ def editarPerfil(request):
     else:
         form=UserEditForm(instance=usuario)
         return render(request, "APP/editarPerfil.html", {"form": form, "nombreusuario":usuario.username})
+
+
+#NEW VIEWS
+
+def project_new(request):
+    params = {}
+
+    # User sends data to server
+    if request.method == 'POST':
+
+        form = ProjectsForm(request.POST)
+
+        #Data valid
+        if form.is_valid():
+
+            _title = form.cleaned_data['title']
+            _sub_title = form.cleaned_data['subtitle']
+            _description = form.cleaned_data['description']
+            _user_in_charge = form.cleaned_data['user_in_charge']
+            _start_date = form.cleaned_data['start_date'] 
+            _end_date = form.cleaned_data['end_date']
+            _completed = form.cleaned_data['completed']
+            
+
+            _newProject = Project(title = _title, 
+                                 subtitle = _sub_title, 
+                                 description = _description,
+                                 user_in_charge = _user_in_charge,
+                                 start_date = _start_date,
+                                 end_date = _end_date,
+                                 completed = _completed,
+                                                              
+                                )
+
+            _newProject.save()
+
+            return render(request,'APP/new_project.html',params)
+
+        
+        #Data no valid
+        else:
+            
+            params['form'] = form
+
+            return render(request,'APP/new_project.html',params)
+
+
+    # User asks data to server
+    else:
+        
+        form = ProjectsForm()
+        
+        params['form'] = form
+
+        return render(request,'APP/new_project.html',params)
+
+"""
+def projects(request):
+    if request.method == 'POST':
+        form = ProjectsForm(request.POST) 
+        if form.is_valid():
+            pro = Project()
+            pro.title = form.cleaned_data['title']
+            pro.subtitle = form.cleaned_data['subtitle']
+            pro.description = form.cleaned_data['description']
+            pro.user_in_charge = form.cleaned_data['user_in_charge']
+            pro.start_date = form.cleaned_data['start_date']
+            pro.end_date = form.cleaned_data['end_date']
+            pro.completed = form.cleaned_data['completed']
+            pro.save()
+            form = ProjectsForm()
+        else:
+            pass
+    else:
+        form = ProjectsForm()
+    
+    projects = Project.objects.all()
+    context = {"projects":projects, "form":form}
+    return render(request, 'APP/new_project.html', context)
+"""
+
+
+def projects_view(request):
+    params = {}
+
+    if request.method == 'POST':
+
+        form = ProjectsForm(request.POST)
+
+        _title = request.POST['title']
+        _sub_title = request.POST['subtitle']
+        _description = request.POST['description']
+        _user_in_charge = request.POST['user_in_charge']
+        _start_date = request.POST['start_date']
+        _end_date = request.POST['end_date']
+        #_completed = request.POST['completed']
+
+
+        params['projects_search'] = Project.objects.filter(
+            title__icontains = _title,
+            subtitle__icontains = _sub_title,
+            description__icontains = _description,
+            user_in_charge__icontains = _user_in_charge,
+            start_date__icontains = _start_date,
+            end_date__icontains = _end_date,
+            #completed__icontains = _completed,
+
+        )
+
+        params['form'] = form
+
+        return render(request,'APP/search_project.html',params)
+    
+    else:
+        
+        form = ProjectsForm()
+        
+        params['projects_search'] = Project.objects.all()
+        params['form'] = form
+
+    return render(request,'APP/search_project.html',params)
 
 
 #OLD VIEWS

@@ -18,11 +18,11 @@
                     <li class="nav-item dropdown">
                 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Users
+                            Add
                         </a>
                     
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'users' %}">View</a></li>
+                            <li><a class="dropdown-item" href="{% url 'new_project' %}">Create Project</a></li>
                         </ul>
                     
                     </li>
@@ -30,23 +30,22 @@
                     <li class="nav-item dropdown">
                 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Publications
+                            Search
                         </a>
                     
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'publications' %}">Add New</a></li>
-                            <li><a class="dropdown-item" href="{% url 'publications_search' %}">Search Publications</a></li>
+                            <li><a class="dropdown-item" href="{% url 'search_project' %}">Search Project</a></li>
                         </ul>
                     
                     </li>
                     <li class="nav-item dropdown">
                 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Purchases
+                            Modify
                         </a>
                     
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{% url 'purchases' %}">View</a></li>
+                            <li><a class="dropdown-item" href="{% url 'purchases' %}">Edit Project</a></li>
                         </ul>
                     
                     </li>

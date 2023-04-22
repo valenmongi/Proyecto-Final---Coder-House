@@ -4,6 +4,19 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+class Project(models.Model):
+    title = models.CharField(max_length=100)
+    subtitle = models.CharField(max_length=100)
+    description = models.TextField()
+    project_manager = models.CharField(max_length=100)
+    user_in_charge = models.CharField(max_length=100)
+    start_date = models.DateField()
+    end_date = models.DateField()
+    completed = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return {self.title}, {self.project_manager}
+
 
 class Users(models.Model):
     user_name = models.EmailField()

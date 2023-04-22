@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 
 
 class RegistroUsuarioForm(UserCreationForm):
-    email=forms.EmailField(label="Email usuario")
-    password1=forms.CharField(label="Contraseña", widget=forms.PasswordInput)
-    password2=forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
+    email=forms.EmailField(label="User Email")
+    password1=forms.CharField(label="Password", widget=forms.PasswordInput)
+    password2=forms.CharField(label="Confirm Password", widget=forms.PasswordInput)
 
     class Meta:
         model=User
@@ -32,6 +32,16 @@ class UserEditForm(UserCreationForm):
 
 class AvatarForm(forms.Form):
     imagen=forms.ImageField(label="Imagen")
+
+class ProjectsForm(forms.Form):
+    title = forms.CharField()
+    subtitle = forms.CharField()
+    description = forms.CharField()
+    #project_manager = forms.CharField()
+    user_in_charge = forms.CharField()
+    start_date = forms.DateField()
+    end_date = forms.DateField()
+    completed = forms.BooleanField()
 
 
 class UsersForm(forms.ModelForm):
