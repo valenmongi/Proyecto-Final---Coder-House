@@ -2,28 +2,30 @@
 
 {% load static %}
 
-{% block titulo %}
-<h1 class="mb-5">FORMULARIO DE INGRESO</h1>
+
+
+{% block content %}
+
+
+<div class="container d-flex align-items-center flex-column mt-5 ">  
+    <form class="border border-light shadow-lg w-100 rounded-3 p-3" action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        
+        <div class="row mb-1 align-items-center justify-content-center">  
+            <label class="col-sm-1 col-form-label"></label>
+            <div class="col-sm-7 text-center">
+                <h1>Login</h1>
+                <h4>User name and password to login into the platform</h4>
+            </div>
+        </div>
+
+            <table>
+            {{ form.as_table }}
+            </table>
+            <input type="submit" value="Login">
+    </form>
+
+
+</div>
 {% endblock %}
 
-{% block contenido_que_cambia %}
-
-<h3>{{ mensaje }}</h3>
-
-<form action="{% url 'login' %}" method="POST"> {% csrf_token %}
-
-    <table>
-
-        {{ form.as_table }}
-    
-    </table>
-
-    <input type="submit" value="INGRESAR">
-
-
-
-
-</form>
-
-
-{% endblock %}

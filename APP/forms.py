@@ -17,11 +17,11 @@ class RegistroUsuarioForm(UserCreationForm):
 
 class UserEditForm(UserCreationForm):
 
-    email= forms.EmailField(label="Email Usuario")
-    password1= forms.CharField(label="Contraseña", widget=forms.PasswordInput)
-    password2= forms.CharField(label="Confirmar Contraseña", widget=forms.PasswordInput)
-    first_name=forms.CharField(label='Modificar Nombre')
-    last_name=forms.CharField(label='Modificar Apellido')
+    email= forms.EmailField(label="User Email")
+    password1= forms.CharField(label="Password", widget=forms.PasswordInput)
+    password2= forms.CharField(label="Confirm new Password", widget=forms.PasswordInput)
+    first_name=forms.CharField(label='Change Name')
+    last_name=forms.CharField(label='Change Surname')
     
     class Meta:
         model=User

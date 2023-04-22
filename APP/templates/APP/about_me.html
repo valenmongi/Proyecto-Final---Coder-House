@@ -4,28 +4,19 @@
 {% load static %}
 
 
-
 {% block content %}
 
 
 <div class="container d-flex align-items-center flex-column mt-5 ">  
-    <form class="border border-light shadow-lg w-100 rounded-3 p-3" action="{% url 'editarPerfil' %}" method="POST">
-        {% csrf_token %}
+    
         
         <div class="row mb-1 align-items-center justify-content-center">  
             <label class="col-sm-1 col-form-label"></label>
             <div class="col-sm-7 text-center">
-                <h1>Edit Profile</h1>
+                <h1>Hello! My name is Valentín Mongi</h1>
                 <h4>Change personal details</h4>
             </div>
         </div>
-
-            <table>
-            {{ form.as_table }}
-            </table>
-            <input type="submit" value="Change">
-    </form>
-
 
 </div>
 {% endblock %}
