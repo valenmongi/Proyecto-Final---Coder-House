@@ -3,6 +3,5 @@ from .models import  *
 
 # Register your models here.
 
-admin.site.register(Users)
-admin.site.register(Publications)
-admin.site.register(Purchases)
+
+admin.site.register(Project)

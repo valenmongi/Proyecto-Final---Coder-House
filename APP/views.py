@@ -105,7 +105,9 @@ def project_new(request):
             _user_in_charge = form.cleaned_data['user_in_charge']
             _start_date = form.cleaned_data['start_date'] 
             _end_date = form.cleaned_data['end_date']
+            _image = form.cleaned_data['image']
             _completed = form.cleaned_data['completed']
+            
             
 
             _newProject = Project(title = _title, 
@@ -114,6 +116,7 @@ def project_new(request):
                                  user_in_charge = _user_in_charge,
                                  start_date = _start_date,
                                  end_date = _end_date,
+                                 image = _image,
                                  completed = _completed,
                                                               
                                 )
